@@ -1,0 +1,17 @@
+<section class="home container my-5 text-dark">
+    <h2 class="text-capitalize text-center mb-4 h1 fw-bolder">Trending Movies</h2>
+    <div class="row g-4 text-center">
+
+        @for (movie of listMovies; track $index) {
+            <div class="col-md-4">
+                <div class="card">
+                    <img [src]="imgPath+movie.poster_path" class="card-img-top w-100" alt="movie">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bolder">{{movie.title||movie.name}}</h5>
+                        <p class="card-text">{{movie.overview.split(" ").splice(0,15).join(" ")}}</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
